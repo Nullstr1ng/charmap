@@ -1,0 +1,12 @@
+﻿<Application x:Class="charmap.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:charmap"
+             xmlns:converter="clr-namespace:charmap.Converters"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converter:Converter_BooleanToVisibility x:Key="BooleanToVisibility" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
