@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" x:Class="charmap.MainWindow"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="350" Width="525">
+        Title="CharMap" Height="350" Width="525">
 
     <Window.DataContext>
         <vm:ViewModel_MainWindow />
@@ -110,7 +110,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>-->
                 </TextBlock>
-                <TextBox Text="{Binding SelectedCharacters, Mode=TwoWay}" Width="200" Margin="10,0"/>
+                <TextBox Text="{Binding SelectedCharacters, Mode=TwoWay}" Width="200" Margin="10,0" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}"/>
                 <Button Content=" Copy " Command="{Binding Command_CopyAll}" />
             </StackPanel>
         </Grid>

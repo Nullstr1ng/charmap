@@ -14,6 +14,7 @@ namespace charmap.ViewModel
 {
     public class ViewModel_MainWindow : INotifyPropertyChanged
     {
+        #region properties
         private ObservableCollection<string> _Characters = new ObservableCollection<string>();
         public ObservableCollection<string> Characters
         {
@@ -113,13 +114,17 @@ namespace charmap.ViewModel
                 }
             }
         }
+        #endregion
 
+        #region commands
         public ICommand Command_SelectCharacter { get; set; }
         public ICommand Command_ShowSelectedCharacter { get; set; }
         public ICommand Command_Copy { get; set; }
         public ICommand Command_AddToCharactersToCopy { get; set; }
         public ICommand Command_CopyAll { get; set; }
+        #endregion
 
+        #region ctor
         public ViewModel_MainWindow()
         {
             if (Command_SelectCharacter == null) Command_SelectCharacter = new RelayCommand<string>(Command_SelectCharacter_Click);
@@ -134,6 +139,7 @@ namespace charmap.ViewModel
             {
                 this.FontFamilyNames.Add(x);
             });
+            this.SelectedFontFamily = this.FontFamilyNames[0];
             //List<string> fontNames = new List<string>();
             //fonts.ForEach(x =>
             //{
@@ -145,7 +151,9 @@ namespace charmap.ViewModel
             //    this.FontFamilyNames.Add(x);
             //});
         }
+        #endregion
 
+        #region command methods
         void Command_SelectCharacter_Click(string selectedChar)
         {
             this.SelectedCharacter = selectedChar;
@@ -171,7 +179,9 @@ namespace charmap.ViewModel
         {
             Clipboard.SetText(this.SelectedCharacters);
         }
+        #endregion
 
+        #region methods
         public async void Refresh()
         {
             this.ShowProgressBar = true;
@@ -223,11 +233,14 @@ namespace charmap.ViewModel
 
             this.ShowProgressBar = false;
         }
+        #endregion
 
+        #region INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
         void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
     }
 }
