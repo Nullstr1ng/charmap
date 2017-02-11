@@ -1,7 +1,6 @@
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\charmap.exe.config
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\charmap.exe
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\charmap.pdb
-C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\obj\Debug\charmap.csprojResolveAssemblyReference.cache
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\obj\Debug\MainWindow.g.cs
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\obj\Debug\App.g.cs
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\obj\Debug\charmap_MarkupCompile.cache
@@ -25,3 +24,4 @@ C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\ko\System.Windows.Inter
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\obj\Debug\charmap.csprojResolveAssemblyReference.cache

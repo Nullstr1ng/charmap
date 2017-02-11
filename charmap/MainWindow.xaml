@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" x:Class="charmap.MainWindow"
         mc:Ignorable="d"
         
-        Title="CharMap" Height="350" Width="525">
+        Title="CharMap" Height="480" Width="640">
 
     <Window.DataContext>
         <vm:ViewModel_MainWindow />
@@ -102,16 +102,12 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Characters to copy" VerticalAlignment="Center" >
-                    <!--<i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseLeftButtonDown">
-                            <i:InvokeCommandAction/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
-                </TextBlock>
-                <TextBox Text="{Binding SelectedCharacters, Mode=TwoWay}" Width="200" Margin="10,0" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}"/>
-                <Button Content=" Copy " Command="{Binding Command_CopyAll}" />
+            <StackPanel>
+                <TextBlock Text="Characters to copy. You can also test the font here" VerticalAlignment="Center" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding SelectedCharacters, Mode=TwoWay}" Width="300" Margin="0,0,10,0" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}" FontSize="{Binding Value, ElementName=fontSize}"/>
+                    <Button Content=" Copy " Command="{Binding Command_CopyAll}" />
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

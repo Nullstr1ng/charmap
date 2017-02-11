@@ -203,7 +203,7 @@ namespace charmap.ViewModel
                         chars.Clear();
                         for (int i = 0; i < characterMap.Count; i++)
                         {
-                            int index = characterMap.Keys.ElementAt(i);
+                            long index = characterMap.Keys.ElementAt(i);
 
                             try
                             {
