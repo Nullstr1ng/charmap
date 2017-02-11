@@ -57,13 +57,12 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border BorderThickness="1" BorderBrush="#1F000000" MinWidth="32" MinHeight="32">
-                                <TextBlock Text="{Binding }" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}" FontSize="{Binding Value, ElementName=fontSize}">
-                                    <i:Interaction.Triggers>
-                                        <i:EventTrigger EventName="MouseLeftButtonDown">
-                                            <i:InvokeCommandAction Command="{Binding DataContext.Command_SelectCharacter, ElementName=MainGrid}" CommandParameter="{Binding }"/>
-                                        </i:EventTrigger>
-                                    </i:Interaction.Triggers>
-                                </TextBlock>
+                                <TextBlock Text="{Binding }" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}" FontSize="{Binding Value, ElementName=fontSize}" />
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.Command_SelectCharacter, ElementName=MainGrid}" CommandParameter="{Binding }"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
