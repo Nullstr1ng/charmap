@@ -122,6 +122,7 @@ namespace charmap.ViewModel
         public ICommand Command_Copy { get; set; }
         public ICommand Command_AddToCharactersToCopy { get; set; }
         public ICommand Command_CopyAll { get; set; }
+        public ICommand Command_ExportToPNG { get; set; }
         #endregion
 
         #region ctor
@@ -140,6 +141,8 @@ namespace charmap.ViewModel
                 this.FontFamilyNames.Add(x);
             });
             this.SelectedFontFamily = this.FontFamilyNames[0];
+            //this.SelectedCharacter = "A";
+            //this.ShowSelectedCharacter = true;
             //List<string> fontNames = new List<string>();
             //fonts.ForEach(x =>
             //{
@@ -178,6 +181,11 @@ namespace charmap.ViewModel
         void Command_CopyAll_Click()
         {
             Clipboard.SetText(this.SelectedCharacters);
+        }
+
+        void Command_ExportToPNG_Click()
+        {
+
         }
         #endregion
 

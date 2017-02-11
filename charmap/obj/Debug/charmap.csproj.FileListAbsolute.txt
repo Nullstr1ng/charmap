@@ -24,4 +24,3 @@ C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\ko\System.Windows.Inter
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Users\jaysonragasa-pc\Codes\CharMap\charmap\obj\Debug\charmap.csprojResolveAssemblyReference.cache

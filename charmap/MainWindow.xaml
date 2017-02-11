@@ -77,7 +77,7 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Border>
-            <Border CornerRadius="4" Background="White" Width="400" Height="200" Visibility="{Binding ShowSelectedCharacter, Converter={StaticResource BooleanToVisibility}}">
+            <Border CornerRadius="4" Background="White" Width="500" Height="300" Visibility="{Binding ShowSelectedCharacter, Converter={StaticResource BooleanToVisibility}}">
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.5" BlurRadius="10"/>
                 </Border.Effect>
@@ -86,13 +86,17 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    
-                    <TextBlock Text="{Binding SelectedCharacter}" FontSize="120" TextAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Center" FontFamily="{Binding SelectedFontFamily}"/>
-                    
+
+                    <Border x:Name="borderSelChar">
+                        <TextBlock x:Name="lblSelChar" Text="{Binding SelectedCharacter}" FontSize="180" TextAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Center" FontFamily="{Binding SelectedFontFamily}"/>
+                    </Border>
+
                     <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
                         <Button Content=" Copy " Command="{Binding Command_Copy}" />
                         <Border Margin="5,0" />
                         <Button Content=" Add to characters to copy " Command="{Binding Command_AddToCharactersToCopy}" />
+                        <Border Margin="5,0" />
+                        <Button x:Name="btnExportToPNG" Content=" Export to PNG " Click="btnExportToPNG_Click" />
                     </StackPanel>
                 </Grid>
             </Border>
