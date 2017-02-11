@@ -136,6 +136,7 @@ namespace charmap.ViewModel
 
             ICollection<FontFamily> ICollectionFonts = Fonts.SystemFontFamilies;
             List<FontFamily> fonts = ICollectionFonts.ToList();
+            fonts = (from x in fonts orderby x.Source select x).ToList();
             fonts.ForEach(x =>
             {
                 this.FontFamilyNames.Add(x);
