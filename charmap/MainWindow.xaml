@@ -45,29 +45,33 @@
         </Grid>
 
 
-        <Grid Grid.Row="1" Margin="0,10">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <ItemsControl x:Name="itemControl" ItemsSource="{Binding Characters}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
+        <Grid x:Name="ContentGrid" Grid.Row="1" Margin="0,10">
+            <ListBox x:Name="itemControl" ItemsSource="{Binding Characters}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="0" />
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" ItemWidth="34" ItemHeight="34" MaxWidth="{Binding ActualWidth, ElementName=ContentGrid}" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
 
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Border Background="#01000000" BorderThickness="1" BorderBrush="#09000000" MinWidth="32" MinHeight="32">
-                                <TextBlock Text="{Binding }" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}" FontSize="{Binding Value, ElementName=fontSize}" />
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="MouseLeftButtonDown">
-                                        <i:InvokeCommandAction Command="{Binding DataContext.Command_SelectCharacter, ElementName=MainGrid}" CommandParameter="{Binding }"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </Border>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="#01000000" BorderThickness="1" BorderBrush="#09000000" MinWidth="32" MinHeight="32">
+                            <TextBlock Text="{Binding }" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{Binding DataContext.SelectedFontFamily, ElementName=MainGrid}" FontSize="{Binding Value, ElementName=fontSize}" />
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                    <i:InvokeCommandAction Command="{Binding DataContext.Command_SelectCharacter, ElementName=MainGrid}" CommandParameter="{Binding }"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
             <Border Background="#FF000000" Opacity="0.5" Visibility="{Binding ShowSelectedCharacter, Converter={StaticResource BooleanToVisibility}}">
                 <i:Interaction.Triggers>
